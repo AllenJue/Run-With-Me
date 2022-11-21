@@ -45,7 +45,6 @@
 		A817224C292AF1650075737A /* RunTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimer.swift; sourceTree = "<group>"; };
 		A817224E292B1A040075737A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A8172250292B26C70075737A /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		A8172255292B5D8E0075737A /* Run-With-Me.README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Run-With-Me.README.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +61,6 @@
 		A81722192927101D0075737A = {
 			isa = PBXGroup;
 			children = (
-				A8172255292B5D8E0075737A /* Run-With-Me.README.md */,
 				A81722242927101D0075737A /* Run With Me */,
 				A81722232927101D0075737A /* Products */,
 			);
