@@ -62,6 +62,7 @@
 		A81722192927101D0075737A = {
 			isa = PBXGroup;
 			children = (
+				A8172252292B5C200075737A /* RunWithMe.README.md */,
 				A81722242927101D0075737A /* Run With Me */,
 				A81722232927101D0075737A /* Products */,
 			);
@@ -92,7 +93,6 @@
 				A81722462929FAD10075737A /* ThemeView.swift */,
 				A817224A292AEEAE0075737A /* RunHeader.swift */,
 				A817224C292AF1650075737A /* RunTimer.swift */,
-				A8172252292B5C200075737A /* RunWithMe.README.md */,
 			);
 			path = "Run With Me";
 			sourceTree = "<group>";
