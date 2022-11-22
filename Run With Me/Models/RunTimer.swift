@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class RunTimer: ObservableObject {
     /// The number of seconds since the beginning of the run.
@@ -30,6 +31,7 @@ class RunTimer: ObservableObject {
         timer?.invalidate()
         timer = nil
         timerStopped = true
+    
     }
     
     init(timeRemaining: Int = 0, distance: Double = 0) {

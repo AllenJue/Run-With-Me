@@ -24,6 +24,10 @@
 		A817224D292AF1650075737A /* RunTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817224C292AF1650075737A /* RunTimer.swift */; };
 		A817224F292B1A040075737A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817224E292B1A040075737A /* History.swift */; };
 		A8172251292B26C70075737A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8172250292B26C70075737A /* DataStore.swift */; };
+		A8F89DC6292C67C900D8ECF9 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F89DC5292C67C900D8ECF9 /* ErrorWrapper.swift */; };
+		A8F89DCC292C688A00D8ECF9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F89DCB292C688A00D8ECF9 /* ErrorView.swift */; };
+		A8F89DCE292C74C900D8ECF9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F89DCD292C74C900D8ECF9 /* Location.swift */; };
+		A8F89DD0292C781300D8ECF9 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F89DCF292C781300D8ECF9 /* LocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		A817224C292AF1650075737A /* RunTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimer.swift; sourceTree = "<group>"; };
 		A817224E292B1A040075737A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A8172250292B26C70075737A /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		A8F89DC5292C67C900D8ECF9 /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
+		A8F89DCB292C688A00D8ECF9 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		A8F89DCD292C74C900D8ECF9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A8F89DCF292C781300D8ECF9 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +98,8 @@
 				A817222B2927101F0075737A /* Preview Content */,
 				A81722462929FAD10075737A /* ThemeView.swift */,
 				A817224A292AEEAE0075737A /* RunHeader.swift */,
-				A817224C292AF1650075737A /* RunTimer.swift */,
+				A8F89DCB292C688A00D8ECF9 /* ErrorView.swift */,
+				A8F89DCF292C781300D8ECF9 /* LocationView.swift */,
 			);
 			path = "Run With Me";
 			sourceTree = "<group>";
@@ -106,10 +115,13 @@
 		A81722332927125E0075737A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A817224C292AF1650075737A /* RunTimer.swift */,
 				A81722342927126F0075737A /* Themes.swift */,
 				A8172236292847770075737A /* CurrentRun.swift */,
 				A817224E292B1A040075737A /* History.swift */,
 				A8172250292B26C70075737A /* DataStore.swift */,
+				A8F89DC5292C67C900D8ECF9 /* ErrorWrapper.swift */,
+				A8F89DCD292C74C900D8ECF9 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,16 +200,20 @@
 				A817223B292850520075737A /* TrailingLabelStyle.swift in Sources */,
 				A817224F292B1A040075737A /* History.swift in Sources */,
 				A81722472929FAD10075737A /* ThemeView.swift in Sources */,
+				A8F89DCE292C74C900D8ECF9 /* Location.swift in Sources */,
+				A8F89DCC292C688A00D8ECF9 /* ErrorView.swift in Sources */,
 				A81722432929DBAB0075737A /* DetailView.swift in Sources */,
 				A817224D292AF1650075737A /* RunTimer.swift in Sources */,
 				A81722282927101D0075737A /* ContentView.swift in Sources */,
 				A81722452929F98E0075737A /* ThemePicker.swift in Sources */,
+				A8F89DC6292C67C900D8ECF9 /* ErrorWrapper.swift in Sources */,
 				A81722352927126F0075737A /* Themes.swift in Sources */,
 				A817223F2929D2AE0075737A /* DetailEditView.swift in Sources */,
 				A81722262927101D0075737A /* Run_With_MeApp.swift in Sources */,
 				A8172237292847770075737A /* CurrentRun.swift in Sources */,
 				A817223D292853300075737A /* RunView.swift in Sources */,
 				A8172251292B26C70075737A /* DataStore.swift in Sources */,
+				A8F89DD0292C781300D8ECF9 /* LocationView.swift in Sources */,
 				A817223929284BBA0075737A /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +351,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,6 +381,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

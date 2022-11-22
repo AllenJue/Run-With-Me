@@ -31,14 +31,23 @@ struct RunHeader: View {
             HStack {
                 VStack (alignment: .leading){
                     Text("Time elapsed")
-                    Label("\(timeElapsed / 60)", systemImage: "hourglass.bottomhalf.fill")
+                    if(timeElapsed / 60 == 0) {
+                        Label("\(timeElapsed) seconds", systemImage: "hourglass.bottomhalf.fill")
+                    } else {
+                        Label("\(timeElapsed / 60) minutes", systemImage: "hourglass.bottomhalf.fill")
+                    }
+                    
                 }
                 
                 Spacer()
                 VStack (alignment: .trailing){
                     Text("Time remaining")
-                    
-                    Label("\(timeRemaining / 60)", systemImage: "hourglass.tophalf.fill")
+                    if(timeRemaining / 60 == 0) {
+                        Label("\(timeRemaining) seconds", systemImage: "hourglass.tophalf.fill")
+                    } else {
+                        Label("\(timeRemaining / 60) minutes", systemImage: "hourglass.tophalf.fill")
+                    }
+                 
                 }
                 
             }

@@ -13,30 +13,38 @@ struct Run_With_MeApp: App {
 //    @State private var sampleData = Run.sampleData
     /// loads an instance of a data store
     @StateObject private var runStore = DataStore()
+    /// optional error handling value
+    @State private var errorHandler: ErrorWrapper?
+    
     var body: some Scene {
         /// main window group for the app, where it is navigatable
         WindowGroup {
             NavigationView {
                 /// pass in a binding for an array of Runs, which will be rendered by the RunView and used as a source of truth
                 RunView(runs: $runStore.runs) {
-                    DataStore.save(runs: runStore.runs) { result in
-                        if case.failure(let error) = result {
-                            fatalError(error.localizedDescription)
+                    Task {
+                        do {
+                            try await DataStore.save(runs: runStore.runs)
+                        } catch {
+                            errorHandler = ErrorWrapper(error: error, guidance: "Try again later")
                         }
                     }
                 }
             }
-            .onAppear {
-                DataStore.load { result in
-                    switch result {
-                    case .failure(let error):
-                        fatalError(error.localizedDescription)
-                    case .success(let runs):
-                        runStore.runs = runs
-                    }
-                    
+            .task {
+                do {
+                    runStore.runs = try await DataStore.load()
+                } catch {
+                    errorHandler = ErrorWrapper(error: error, guidance: "Could not load data successfully")
                 }
             }
+            .sheet(item: $errorHandler, onDismiss: {
+                /// fill with sample data on dismiss when user dismisses
+                runStore.runs = Run.sampleData
+            }) { wrapper in
+                ErrorView(errorWrapper: wrapper)
+            }
+//            .sheet(item: , content: <#T##(Identifiable) -> View#>)
         }
     }
 }

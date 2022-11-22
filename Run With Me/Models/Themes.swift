@@ -20,10 +20,12 @@ enum Theme: String, CaseIterable, Identifiable, Codable {
     case zhu
     
     var accentColor: Color {
-        switch self {
-        case .limey, .pinky, .zhu, .pastey: return .black
-        case .magic, .UT, .love, .platinum, .ocean: return .white
-        }
+//        switch self {
+//        case .limey, .pinky, .zhu, .pastey: return .black
+//        case .magic, .UT, .love, .platinum, .ocean: return .white
+//        }
+        return .black
+        
     }
     
     var mainColor: Color {

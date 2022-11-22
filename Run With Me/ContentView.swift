@@ -11,11 +11,15 @@ import SwiftUI
 struct ContentView: View {
     @Binding var run: Run
     @StateObject var timer = RunTimer()
+    @StateObject var location = Location()
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
                 .fill(run.theme.mainColor)
             VStack {
+                LocationView()
+
                 RunHeader(timeElapsed: timer.secondsElapsed, timeRemaining: timer.secondsRemaining, distance: run.runDistance)
                 Spacer()
                 Circle()
@@ -39,7 +43,6 @@ struct ContentView: View {
             run.history.insert(newHistory, at: 0)
         }
         .navigationBarTitleDisplayMode(.inline)
-        
     }
 }
 

@@ -24,7 +24,7 @@ struct CardView: View {
             }
             .font(.caption)
         }
-//        .foregroundColor(run.theme.accentColor)
+        .foregroundColor(run.theme.accentColor)
         .padding()
     }
 }
