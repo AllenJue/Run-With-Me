@@ -24,6 +24,7 @@
 		A817224D292AF1650075737A /* RunTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817224C292AF1650075737A /* RunTimer.swift */; };
 		A817224F292B1A040075737A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817224E292B1A040075737A /* History.swift */; };
 		A8172251292B26C70075737A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8172250292B26C70075737A /* DataStore.swift */; };
+		A8CB160D292F180100B92F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8CB160C292F180100B92F23 /* LaunchScreen.storyboard */; };
 		A8F89DC6292C67C900D8ECF9 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F89DC5292C67C900D8ECF9 /* ErrorWrapper.swift */; };
 		A8F89DCC292C688A00D8ECF9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F89DCB292C688A00D8ECF9 /* ErrorView.swift */; };
 		A8F89DCE292C74C900D8ECF9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F89DCD292C74C900D8ECF9 /* Location.swift */; };
@@ -49,6 +50,7 @@
 		A817224C292AF1650075737A /* RunTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimer.swift; sourceTree = "<group>"; };
 		A817224E292B1A040075737A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A8172250292B26C70075737A /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		A8CB160C292F180100B92F23 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8F89DC5292C67C900D8ECF9 /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		A8F89DCB292C688A00D8ECF9 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		A8F89DCD292C74C900D8ECF9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		A81722242927101D0075737A /* Run With Me */ = {
 			isa = PBXGroup;
 			children = (
+				A8CB160C292F180100B92F23 /* LaunchScreen.storyboard */,
 				A817223E2929D2AE0075737A /* DetailEditView.swift */,
 				A817223C292853300075737A /* RunView.swift */,
 				A817223A292850520075737A /* TrailingLabelStyle.swift */,
@@ -184,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8CB160D292F180100B92F23 /* LaunchScreen.storyboard in Resources */,
 				A817222D2927101F0075737A /* Preview Assets.xcassets in Resources */,
 				A817222A2927101F0075737A /* Assets.xcassets in Resources */,
 			);
@@ -346,11 +350,13 @@
 				DEVELOPMENT_TEAM = 7PNW49BSY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Run-With-Me-Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to help locate you";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We're currently using your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -378,11 +384,13 @@
 				DEVELOPMENT_TEAM = 7PNW49BSY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Run-With-Me-Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to help locate you";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We're currently using your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

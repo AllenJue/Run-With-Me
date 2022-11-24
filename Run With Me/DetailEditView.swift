@@ -26,7 +26,7 @@ struct DetailEditView: View {
                     Slider(value: $data.runDistance, in: 1...60, step: 0.10)
                     Spacer()
                     let formatted = String(format: "%.1f", data.runDistance)
-                    Text(formatted)
+                    Text("\(formatted) miles")
                 }
                 ThemePicker(selection: $data.theme)
             }

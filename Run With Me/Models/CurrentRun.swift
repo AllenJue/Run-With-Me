@@ -41,9 +41,11 @@ extension Run {
     }
     
     mutating func update(from data: Data) {
+        runName = data.runName
         runDistance = data.runDistance
         goalTime = Int(data.goalTime)
         theme = data.theme
+        print("Updating")
     }
     
     init(data: Data) {

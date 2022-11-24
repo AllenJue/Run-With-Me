@@ -49,6 +49,7 @@ struct RunView: View {
                                 isPresentingNewRun = false;
                                 newRunData = Run.Data()
                             }
+                            .disabled(newRunData.runName.isEmpty)
                         }
                     }
             }

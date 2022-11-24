@@ -70,9 +70,10 @@ struct DetailView: View {
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
-                                isEditing = false
                                 run.update(from: data)
+                                isEditing = false
                             }
+                            .disabled(data.runName.isEmpty)
                         }
                     }
             }
