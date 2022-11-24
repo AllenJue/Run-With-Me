@@ -1,4 +1,5 @@
 # Run-With-Me
+![100](https://user-images.githubusercontent.com/66751933/203690721-6f97d9f8-acc8-415d-832e-09d5ef1514bb.png)
 
 ## Introduction
 A simple running app, which utilizes Swift to create a user-friendly navigatable app to plan and track run stats.
