@@ -12,7 +12,7 @@ import SwiftUI
  */
 struct DetailEditView: View {
     @Binding var data: Run.Data
-
+    
     var body: some View {
         Form {
             Section (header: Text("Run information")) {

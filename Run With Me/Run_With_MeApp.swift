@@ -44,7 +44,6 @@ struct Run_With_MeApp: App {
             }) { wrapper in
                 ErrorView(errorWrapper: wrapper)
             }
-//            .sheet(item: , content: <#T##(Identifiable) -> View#>)
         }
     }
 }

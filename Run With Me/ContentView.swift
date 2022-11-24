@@ -7,26 +7,24 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
     @Binding var run: Run
-    @StateObject var timer = RunTimer()
     @StateObject var location = Location()
+    @StateObject var timer = RunTimer()
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
                 .fill(run.theme.mainColor)
             VStack {
-                LocationView()
-
-                RunHeader(timeElapsed: timer.secondsElapsed, timeRemaining: timer.secondsRemaining, distance: run.runDistance)
+                RunHeader(timeElapsed: timer.secondsElapsed, timeRemaining: timer.secondsRemaining, distance: location.distanceTraveled)
                 Spacer()
-                Circle()
-                    .strokeBorder(lineWidth: 24)
-
+                LocationView(metersTraveled: location.distanceTraveled, timeElapsed: timer.secondsElapsed)
+                Spacer()
                 HStack {
-                    Text("Today's Run")
+                    Text(run.runName)
                 }
             }
             .padding()
@@ -46,8 +44,3 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(run: .constant(Run.sampleData[0]))
-    }
-}

@@ -14,7 +14,8 @@ struct DetailView: View {
     @Binding var run: Run
     @State private var isEditing = false
     @State private var data = Run.Data() /* Source of truth */
-    
+    @State private var location = Location()
+
     var body: some View {
         /**
          Create a list of details, which describe the goal time, run distance, completed runs, and gives the user the opportunity to start the run.
@@ -27,7 +28,6 @@ struct DetailView: View {
                             .font(.headline)
                             .foregroundColor(.accentColor)
                     }
-                    
                     HStack {
                         Label("Goal Time", systemImage: "clock")
                         Spacer()
@@ -42,7 +42,6 @@ struct DetailView: View {
                 }
                 Section(header: Text("History")) {
                     ForEach (run.history) { history in
-                        Image(systemName: "calendar")
                         Text(history.data, style: .date)
                     }
                 }
@@ -51,6 +50,9 @@ struct DetailView: View {
             
         }
         .navigationTitle(run.runName)
+        .onAppear {
+            location.requestPermission()
+        }
         .toolbar {
             Button("Edit") {
                 isEditing = true;

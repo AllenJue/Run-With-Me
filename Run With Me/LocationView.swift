@@ -7,60 +7,34 @@
 
 import Foundation
 import SwiftUI
+import CoreLocation
 
+let METER_TO_MILE_CONVERSION = 1_609.34
+let SECONDS_TO_HOURS_CONVERSION = 3_600.0
 struct LocationView: View {
-    @StateObject var location = Location()
+    let metersTraveled: Double
+    let timeElapsed: Int
     var body: some View {
-        switch location.locationManager.authorizationStatus {
-        case .notDetermined:
-            AnyView(RequestLocationView())
-                .environmentObject(location)
-        case .restricted:
-            Text("Restricted")
-        case .denied:
-            Text("Denied")
-        case .authorizedAlways, .authorizedWhenInUse:
-            TrackingView()
-                .environmentObject(location)
-        default:
-            Text("Unexpected status")
+        VStack {
+            let milesTraveled = convertMetersToMiles(metersTraveled: metersTraveled)
+            let formattedDistance = String(format: "%.2f", milesTraveled)
+            Label("Distance traveled: \(formattedDistance) miles", systemImage: "map.circle")
+            let formattedSpeed = String(format: "%.2f", getAvgSpeed(timeElapsed: timeElapsed, distanceInMiles: milesTraveled))
+            Label("Average speed: \(formattedSpeed) mph", systemImage: "move.3d")
         }
     }
-}
- 
-struct RequestLocationView: View {
-    @EnvironmentObject var location: Location
-        var body: some View {
-            VStack {
-                Image(systemName: "location.circle")
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                Button(action: {
-                    location.requestPermission()
-                }, label: {
-                    Label("Allow tracking", systemImage: "location")
-                })
-                .padding(10)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                Text("We need your permission to track you.")
-                    .foregroundColor(.gray)
-                    .font(.caption)
-            }
-        }
 }
 
-struct TrackingView: View {
-    @EnvironmentObject var locationViewModel: Location
-    var body: some View {
-        Text("Thanks!")
-    }
+func convertMetersToMiles(metersTraveled: Double) -> Double {
+    return metersTraveled / METER_TO_MILE_CONVERSION
+}
+
+func getAvgSpeed(timeElapsed: Int, distanceInMiles: Double) -> Double {
+    return distanceInMiles / (Double(timeElapsed) / SECONDS_TO_HOURS_CONVERSION)
 }
 
 struct LocationView_Preview: PreviewProvider {
     static var previews: some View {
-        LocationView()
+        LocationView(metersTraveled: 2000.0, timeElapsed: 7200)
     }
 }
